@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>78833ed7-d11a-4858-b90a-503bbf2e8c45</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Google.Protobuf</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Any.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnyPartial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Api.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ByteArray.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ByteString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CodedInputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CodedOutputStream.ComputeSize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CodedOutputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Descriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DescriptorBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DescriptorPool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DescriptorUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DescriptorValidationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Duration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DurationPartial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Empty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnumDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnumValueDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldAccessorBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldCodec.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldMask.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldMaskPartial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FrameworkPortability.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeneratedClrTypeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICustomDiagnosticMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDeepCloneable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IFieldAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidJsonException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidProtocolBufferException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonTokenizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LimitedInputStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapFieldAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MethodDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OneofAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OneofDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OriginalNameAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PackageDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PartialClasses.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyInfoExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProtoPreconditions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReadOnlyDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReflectionUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RepeatedField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RepeatedFieldAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ServiceDescriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SingleFieldAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SourceContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Struct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TimeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timestamp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TimestampPartial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Type.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TypeRegistry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValuePartial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WireFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Wrappers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WrappersPartial.cs" />
+  </ItemGroup>
+</Project>

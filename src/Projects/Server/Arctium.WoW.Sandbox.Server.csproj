@@ -1,0 +1,118 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Arctium WoW Sandbox</AssemblyName>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Platforms>x64</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
+        <RuntimeIdentifiers>win-x64;osx-x64</RuntimeIdentifiers>
+        <AnalysisLevel>4</AnalysisLevel>
+
+        <WarningLevel>4</WarningLevel>
+        <Authors>Arctium</Authors>
+        <Company>Arctium</Company>
+        <AssemblyVersion>9.2.5.43519</AssemblyVersion>
+        <AssemblyFileVersion>9.2.5.43519</AssemblyFileVersion>
+        <Version>9.2.5.43519</Version>
+        <Product>Arctium WoW Sandbox</Product>
+        <Copyright>Copyright © Arctium</Copyright>
+        <AssemblyTitle>Arctium WoW Sandbox</AssemblyTitle>
+        <AssemblyProduct>Arctium WoW Sandbox</AssemblyProduct>
+        <AssemblyCompany>Arctium</AssemblyCompany>
+        <AssemblyDescription>Arctium WoW Sandbox</AssemblyDescription>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <NeutralResourcesLanguage>en-US</NeutralResourcesLanguage>
+        <ApplicationIcon>logo.ico</ApplicationIcon>
+        <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+        <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+        <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\AreaTable.csv" />
+        <None Remove="Resources\charstartoutfits.csv" />
+        <None Remove="Resources\charstartoutfits.txt" />
+        <None Remove="Resources\ChrClassesXPowerTypes.csv" />
+        <None Remove="Resources\ChrSpecialization.csv" />
+        <None Remove="Resources\creaturestats%282%29.txt" />
+        <None Remove="Resources\dbinfo.txt" />
+        <None Remove="Resources\gameobjects.txt" />
+        <None Remove="Resources\gameobjectstats.csv" />
+        <None Remove="Resources\gamobjectstats.txt" />
+        <None Remove="Resources\GlobalStrings.csv" />
+        <None Remove="Resources\Internal\creaturespawns.txt" />
+        <None Remove="Resources\Internal\creaturespawns.txt~RF1cf885e.TMP" />
+        <None Remove="Resources\Internal\creaturesplines.json" />
+        <None Remove="Resources\Item.txt" />
+        <None Remove="Resources\itemappearance.txt" />
+        <None Remove="Resources\ItemModifiedAppearance.txt" />
+        <None Remove="Resources\Mount.csv" />
+        <None Remove="Resources\MountXDisplay.csv" />
+        <None Remove="Resources\namegens.txt" />
+        <None Remove="Resources\spawns.txt" />
+        <None Remove="Resources\SpellXSpellVisual.csv" />
+        <None Remove="Resources\TactKey.csv" />
+        <None Remove="Resources\TactKeyLookup.csv" />
+        <None Remove="Resources\Toy.csv" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\AreaTable.csv" />
+        <EmbeddedResource Include="Resources\charstartoutfits.csv" />
+        <EmbeddedResource Include="Resources\charstartoutfits.txt" />
+        <EmbeddedResource Include="Resources\ChrClassesXPowerTypes.csv" />
+        <EmbeddedResource Include="Resources\ChrSpecialization.csv" />
+        <EmbeddedResource Include="Resources\creaturestats.zip" />
+        <EmbeddedResource Include="Resources\dbinfo.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\gameobjects.txt" />
+        <EmbeddedResource Include="Resources\gameobjectstats.csv" />
+        <EmbeddedResource Include="Resources\gamobjectstats.txt" />
+        <EmbeddedResource Include="Resources\GlobalStrings.csv" />
+        <EmbeddedResource Include="Resources\Item.txt" />
+        <EmbeddedResource Include="Resources\itemappearance.txt" />
+        <EmbeddedResource Include="Resources\ItemModifiedAppearance.txt" />
+        <EmbeddedResource Include="Resources\Mount.csv" />
+        <EmbeddedResource Include="Resources\MountXDisplay.csv" />
+        <EmbeddedResource Include="Resources\namegens.txt" />
+        <EmbeddedResource Include="Resources\spawns.txt" />
+        <EmbeddedResource Include="Resources\SpellXSpellVisual.csv" />
+        <EmbeddedResource Include="Resources\TactKey.csv" />
+        <EmbeddedResource Include="Resources\TactKeyLookup.csv" />
+        <EmbeddedResource Include="Resources\Toy.csv" />
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <OutputPath>..\..\..\build\Debug</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <OutputPath>..\..\..\build\Release</OutputPath>
+        <DefineConstants>TRACE;PUBLIC</DefineConstants>
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <RdXmlFile Include="rd.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Framework\Arctium.Wow.Sandbox.Framework.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Internal\creaturespawns.txt" />
+        <EmbeddedResource Include="Resources\Internal\creaturesplines.json" />
+    </ItemGroup>
+
+</Project>

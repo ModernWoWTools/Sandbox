@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{B7D0E27F-3AB2-413A-B9AF-040C67750639}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseMSBuildEngine>false</UseMSBuildEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\Compiled\Debug\</OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>
+    </DebugType>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\Compiled\Release\</OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PublicRelease|x64'">
+    <OutputPath>bin\x64\PublicRelease\</OutputPath>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>6</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DefineConstants>PUBLIC</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LeystTV|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\LeystTV\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>6</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Runtime.Remoting" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AuthMessageAttribute.cs" />
+    <Compile Include="Attributes\ConsoleCommandAttribute.cs" />
+    <Compile Include="Constants\Authentication\AuthResult.cs" />
+    <Compile Include="Constants\Descriptors\UpdateFieldFlags.cs" />
+    <Compile Include="Constants\Descriptors\UpdateFields.cs" />
+    <Compile Include="Constants\Guids\HighGuidMask.cs" />
+    <Compile Include="Constants\Guids\HighGuidType.cs" />
+    <Compile Include="Constants\Misc\LogType.cs" />
+    <Compile Include="Constants\MovementSpeeds.cs" />
+    <Compile Include="Constants\Movement\MovementFlagMasks.cs" />
+    <Compile Include="Constants\Movement\MovementFlags.cs" />
+    <Compile Include="Constants\Movement\MovementFlags2.cs" />
+    <Compile Include="Constants\Net\AuthChannel.cs" />
+    <Compile Include="Constants\Net\AuthClientMessage.cs" />
+    <Compile Include="Constants\Net\AuthServerMessage.cs" />
+    <Compile Include="Constants\Net\BnetServiceHash.cs" />
+    <Compile Include="Constants\Net\ClientMessage.cs" />
+    <Compile Include="Constants\Net\ServerMessage.cs" />
+    <Compile Include="Constants\Objects\AccountDataTypes.cs" />
+    <Compile Include="Constants\Objects\CharacterFlags.cs" />
+    <Compile Include="Constants\Objects\Class.cs" />
+    <Compile Include="Constants\Objects\EquipmentSlots.cs" />
+    <Compile Include="Constants\Objects\MessageTypes.cs" />
+    <Compile Include="Constants\Objects\ObjectType.cs" />
+    <Compile Include="Constants\Objects\UpdateFlags.cs" />
+    <Compile Include="Constants\Objects\UpdateType.cs" />
+    <Compile Include="Constants\Objects\ViolenceLevels.cs" />
+    <Compile Include="Cryptography\BNet\BNetCrypt.cs" />
+    <Compile Include="Cryptography\BNet\SRP6a.cs" />
+    <Compile Include="Cryptography\SARC4.cs" />
+    <Compile Include="Cryptography\WoW\RsaCrypt.cs" />
+    <Compile Include="Cryptography\WoW\RsaData.cs" />
+    <Compile Include="Cryptography\WoW\RsaStore.cs" />
+    <Compile Include="Cryptography\WoW\WoWCrypt.cs" />
+    <Compile Include="Database\Auth\Entities\Account.cs" />
+    <Compile Include="Database\Auth\Entities\AllowedClass.cs" />
+    <Compile Include="Database\Auth\Entities\AllowedRace.cs" />
+    <Compile Include="Database\Auth\Entities\Component.cs" />
+    <Compile Include="Database\Auth\Entities\Module.cs" />
+    <Compile Include="Database\Auth\Entities\Realm.cs" />
+    <Compile Include="IO\FieldInfo.cs" />
+    <Compile Include="IO\FileOptions.cs" />
+    <Compile Include="IO\LalField.cs" />
+    <Compile Include="IO\LalFile.cs" />
+    <Compile Include="IO\LalParser.cs" />
+    <Compile Include="IO\LalTypeMapper.cs" />
+    <Compile Include="IO\LalTypes.cs" />
+    <Compile Include="Logging\IO\LogWriter.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\PacketLog.cs" />
+    <Compile Include="Misc\Command.cs" />
+    <Compile Include="Misc\Extensions.cs" />
+    <Compile Include="Misc\Helper.cs" />
+    <Compile Include="Misc\Singleton.cs" />
+    <Compile Include="Network\Packets\AuthPacket.cs" />
+    <Compile Include="Network\Packets\AuthPacketHeader.cs" />
+    <Compile Include="Network\Packets\BitPack.cs" />
+    <Compile Include="Network\Packets\BitUnpack.cs" />
+    <Compile Include="Network\Packets\OpcodeAttribute.cs" />
+    <Compile Include="Network\Packets\PacketReader.cs" />
+    <Compile Include="Network\Packets\PacketWriter.cs" />
+    <Compile Include="ObjectDefines\ChatMessageValues.cs" />
+    <Compile Include="ObjectDefines\ObjectMovementValues.cs" />
+    <Compile Include="ObjectDefines\Quaternion.cs" />
+    <Compile Include="ObjectDefines\SmartGuid.cs" />
+    <Compile Include="ObjectDefines\Vector4.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proto\AccountService.cs" />
+    <Compile Include="Proto\AccountTypes.cs" />
+    <Compile Include="Proto\AttributeTypes.cs" />
+    <Compile Include="Proto\AuthenticationService.cs" />
+    <Compile Include="Proto\ChallengeService.cs" />
+    <Compile Include="Proto\ChannelService.cs" />
+    <Compile Include="Proto\ChannelTypes.cs" />
+    <Compile Include="Proto\ConnectionService.cs" />
+    <Compile Include="Proto\ContentHandleTypes.cs" />
+    <Compile Include="Proto\EntityTypes.cs" />
+    <Compile Include="Proto\FieldOptions.cs" />
+    <Compile Include="Proto\FriendsService.cs" />
+    <Compile Include="Proto\FriendsTypes.cs" />
+    <Compile Include="Proto\GameUtilitiesService.cs" />
+    <Compile Include="Proto\GameUtilitiesTypes.cs" />
+    <Compile Include="Proto\InvitationTypes.cs" />
+    <Compile Include="Proto\MethodOptions.cs" />
+    <Compile Include="Proto\NotificationTypes.cs" />
+    <Compile Include="Proto\PresenceService.cs" />
+    <Compile Include="Proto\PresenceTypes.cs" />
+    <Compile Include="Proto\ProfanityFilterConfig.cs" />
+    <Compile Include="Proto\ReportService.cs" />
+    <Compile Include="Proto\ResourceService.cs" />
+    <Compile Include="Proto\RoleTypes.cs" />
+    <Compile Include="Proto\RpcConfig.cs" />
+    <Compile Include="Proto\RpcTypes.cs" />
+    <Compile Include="Proto\ServiceOptions.cs" />
+    <Compile Include="Proto\UserManagerService.cs" />
+    <Compile Include="Proto\UserManagerTypes.cs" />
+    <Compile Include="Serialization\Serializator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\Character\Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\itemappearance.txt" />
+  </ItemGroup>
+  <Import Project="..\..\Libs\Google.Protobuf\Google.Protobuf\Google.Protobuf.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

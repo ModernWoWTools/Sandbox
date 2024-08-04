@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{8497E5BC-BDA3-4216-82C0-1244CDACA222}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AuthServer</RootNamespace>
+    <AssemblyName>Arctium WoW Sandbox</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseMSBuildEngine>false</UseMSBuildEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\..\Compiled\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <ConsolePause>false</ConsolePause>
+    <Externalconsole>true</Externalconsole>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\..\Compiled\Release\</OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PublicRelease|x64'">
+    <OutputPath>..\..\..\Build\Public\</OutputPath>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>default</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DefineConstants>PUBLIC</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Arctium_WildStar_Development_Wiki_Logo.png.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LeystTV|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\LeystTV\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LEYSTTV</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>default</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthServer\Attributes\BnetServiceAttribute.cs" />
+    <Compile Include="AuthServer\Attributes\BnetServiceBase.cs" />
+    <Compile Include="AuthServer\JsonObjects\JsonObjects.cs" />
+    <Compile Include="AuthServer\Network\RestSession.cs" />
+    <Compile Include="AuthServer\PacketManager.cs" />
+    <Compile Include="AuthServer\Packets\BnetHandlers\AccountService.cs" />
+    <Compile Include="AuthServer\Packets\BnetHandlers\AuthenticationServerService.cs" />
+    <Compile Include="AuthServer\Packets\BnetHandlers\ConnectionService.cs" />
+    <Compile Include="AuthServer\Packets\BnetHandlers\GameUtilitiesService.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="HWData.cs" />
+    <Compile Include="HWID.cs" />
+    <Compile Include="Sandbox.cs" />
+    <Compile Include="AuthServer\Configuration\AuthConfig.cs" />
+    <Compile Include="AuthServer\Managers\ComponentManager.cs" />
+    <Compile Include="AuthServer\Managers\Manager.cs" />
+    <Compile Include="AuthServer\Managers\ModuleManager.cs" />
+    <Compile Include="AuthServer\Managers\RealmManager.cs" />
+    <Compile Include="AuthServer\Network\AuthSession.cs" />
+    <Compile Include="AuthServer\Network\Server.cs" />
+    <Compile Include="AuthServer\Packets\Handlers\AuthHandler.cs" />
+    <Compile Include="AuthServer\Packets\Handlers\MiscHandler.cs" />
+    <Compile Include="AuthServer\Packets\Handlers\RealmHandler.cs" />
+    <Compile Include="AuthServer\Packets\PacketManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorldServer\Game\Chat\ChatCommandAttribute.cs" />
+    <Compile Include="WorldServer\Game\Chat\ChatCommandParser.cs" />
+    <Compile Include="WorldServer\Game\Chat\Commands\PlayerCommands.cs" />
+    <Compile Include="WorldServer\Game\Entities\Character.cs" />
+    <Compile Include="WorldServer\Game\Entities\CharStartOutfit.cs" />
+    <Compile Include="WorldServer\Game\Entities\Creature.cs" />
+    <Compile Include="WorldServer\Game\Entities\CreatureSpawn.cs" />
+    <Compile Include="WorldServer\Game\Entities\Emote.cs" />
+    <Compile Include="WorldServer\Game\Entities\GameObject.cs" />
+    <Compile Include="WorldServer\Game\Entities\GameObjectSpawn.cs" />
+    <Compile Include="WorldServer\Game\Entities\Item.cs" />
+    <Compile Include="WorldServer\Game\Entities\Races.cs" />
+    <Compile Include="WorldServer\Game\Entities\Skill.cs" />
+    <Compile Include="WorldServer\Game\Entities\Spell.cs" />
+    <Compile Include="WorldServer\Game\Entities\WorldObject.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\AddonHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\AuthenticationHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\CacheHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\CharacterHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\ChatHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\CinematicHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\EmoteHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\GarrisonHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\ItemHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\LogoutHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\MiscHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\MoveHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\ObjectHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\SpellHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\StoreHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\TimeHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\TutorialHandler.cs" />
+    <Compile Include="WorldServer\Game\Packets\PacketHandler\VehicleHandler.cs" />
+    <Compile Include="WorldServer\Managers\ActionManager.cs" />
+    <Compile Include="WorldServer\Managers\EquipmentManager.cs" />
+    <Compile Include="WorldServer\Managers\ItemManager.cs" />
+    <Compile Include="WorldServer\Managers\Manager.cs" />
+    <Compile Include="WorldServer\Managers\ObjectManager.cs" />
+    <Compile Include="WorldServer\Managers\SkillManager.cs" />
+    <Compile Include="WorldServer\Managers\SpawnManager.cs" />
+    <Compile Include="WorldServer\Managers\SpellManager.cs" />
+    <Compile Include="WorldServer\Managers\WorldManager.cs" />
+    <Compile Include="WorldServer\Network\WorldClass.cs" />
+    <Compile Include="WorldServer\Network\WorldNetwork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="SpellXSpellVisual.csv" />
+    <EmbeddedResource Include="Mount.csv" />
+    <EmbeddedResource Include="MountXDisplay.csv" />
+    <EmbeddedResource Include="ChrClassesXPowerTypes.csv" />
+    <EmbeddedResource Include="ChrSpecialization.csv" />
+    <EmbeddedResource Include="gameobjectstats.csv" />
+    <EmbeddedResource Include="Hotfixes\TactKey.csv" />
+    <EmbeddedResource Include="Hotfixes\TactKeyLookup.csv" />
+    <EmbeddedResource Include="Hotfixes\AreaTable.csv" />
+    <EmbeddedResource Include="Hotfixes\GlobalStrings.csv" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Toy.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Item.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="itemappearance.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ItemModifiedAppearance.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="creaturestats%282%29.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="charstartoutfits.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="namegens.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="spawns.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gameobjects.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gamobjectstats.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dbinfo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Arctium_WildStar_Development_Wiki_Logo.png.ico" />
+    <EmbeddedResource Include="Hotfixes\charstartoutfits.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.csproj">
+      <Project>{b7d0e27f-3ab2-413a-b9af-040c67750639}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
