@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Platforms>x64</Platforms>
         <WarningLevel>4</WarningLevel>
         <PlatformTarget>x64</PlatformTarget>
@@ -12,7 +12,7 @@
     <Import Project="..\..\Libs\Google.Protobuf\Google.Protobuf\Google.Protobuf.projitems" Label="Shared" />
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <ItemGroup>

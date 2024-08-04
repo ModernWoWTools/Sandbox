@@ -328,7 +328,7 @@ namespace AuthServer.Game.Packets.PacketHandler
                 authResponse.WriteUInt8(8); // 0x41
                 authResponse.WriteUInt32(0); // 0x44, timeSecondsUntilPCKick
                 authResponse.WriteInt32(WorldMgr.ChrRaces.Count); // raceclass
-                authResponse.WriteUInt32(1); // char templates
+                authResponse.WriteUInt32(0); // char templates
                 authResponse.WriteUInt32(4); // 0x84, currencyID
                 authResponse.WriteUnixTime();
 
@@ -341,9 +341,9 @@ namespace AuthServer.Game.Packets.PacketHandler
                     for (int j = 0; j < defaultAllowedClasses.Length / 2; j++)
                     {
                         authResponse.WriteUInt8(defaultAllowedClasses[j, 0]); // classid
-                        authResponse.WriteUInt8(defaultAllowedClasses[j, 1]); // expid
-
-                        authResponse.WriteUInt8(0); // isdisabled, enable all
+                        authResponse.WriteUInt8(8); // expid
+                        authResponse.WriteUInt8(8); // expid
+                        authResponse.WriteUInt8(0); // expid
                     }
                 }
                 /*for (int i = 0; i < defaultAllowedClasses.Length / 2; i++)
@@ -370,7 +370,7 @@ namespace AuthServer.Game.Packets.PacketHandler
                 BitPack.Write(0);
                 BitPack.Flush();
 
-                for (int i = 0; i < 1; i++)
+                /*for (int i = 0; i < 1; i++)
                 {
                     authResponse.WriteUInt32(50);
                     authResponse.WriteInt32(defaultAllowedClasses.Length);
@@ -395,7 +395,7 @@ namespace AuthServer.Game.Packets.PacketHandler
 
                     authResponse.WriteString("Level 60 - Zereth Mortis");
                     authResponse.WriteString("Start in the new zone 'Zereth Mortis'");
-                }
+                }*/
             }
 
             session.Send(ref authResponse);
@@ -474,19 +474,15 @@ namespace AuthServer.Game.Packets.PacketHandler
                 // Glue features
                 var featureSystemStatusGlueScreen = new PacketWriter(ServerMessage.FeatureSystemStatusGlueScreen);
 
-                /* var bitPack = new BitPack(featureSystemStatusGlueScreen);
-
-                 var IsDisabledByParentalControls = false; // Store
-                 var IsEnabled = false;  // Store
-                 var IsAvailable = false;  // PurchaseAPI
-
-                 bitPack.Write(IsEnabled);
-                 bitPack.Write(IsAvailable);
-                 bitPack.Write(IsDisabledByParentalControls);
+                 var bitPack = new BitPack(featureSystemStatusGlueScreen);
 
                  bitPack.Write(false);
                  bitPack.Write(false);
-                 bitPack.Write(true);
+                 bitPack.Write(false);
+                 bitPack.Write(false);
+                 bitPack.Write(false);
+                 bitPack.Write(false);
+                 bitPack.Write(false);
                  bitPack.Write(false);
                  bitPack.Write(false);
                  bitPack.Write(false);
@@ -506,21 +502,15 @@ namespace AuthServer.Game.Packets.PacketHandler
                  featureSystemStatusGlueScreen.WriteUInt64(0);
                  featureSystemStatusGlueScreen.WriteUInt32(100); // chars
                  featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(180);
-                 featureSystemStatusGlueScreen.WriteUInt32(3);
                  featureSystemStatusGlueScreen.WriteUInt32(0);
                  featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(7);
-                 featureSystemStatusGlueScreen.WriteUInt32(7);
                  featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt16(0);*/
-
-                featureSystemStatusGlueScreen.WriteBytes(new byte[] {0x5C, 0x2F, 0xC0, 0x50, 0x0A, 0x00, 0x00, 0x00, 0x60, 0xEA, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x0B, 0x03, 0x00, 0x00, 0x2C, 0x01, 0x00, 0x00, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x32, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0xB4, 0x00, 0x00,
-    0x00, 0x06, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02,
-    0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00});
+                 featureSystemStatusGlueScreen.WriteUInt32(8);
+                 featureSystemStatusGlueScreen.WriteUInt32(8);
+                 featureSystemStatusGlueScreen.WriteUInt32(0);
+                 featureSystemStatusGlueScreen.WriteUInt32(0);
+                 featureSystemStatusGlueScreen.WriteUInt16(0);
+                 featureSystemStatusGlueScreen.WriteUInt16(0);
 
                 session.Send(ref featureSystemStatusGlueScreen);
             }

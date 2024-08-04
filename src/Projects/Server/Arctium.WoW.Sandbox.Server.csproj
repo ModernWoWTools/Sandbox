@@ -3,7 +3,7 @@
     <PropertyGroup>
         <AssemblyName>Arctium WoW Sandbox</AssemblyName>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Platforms>x64</Platforms>
         <PlatformTarget>x64</PlatformTarget>
         <RuntimeIdentifiers>win-x64;osx-x64</RuntimeIdentifiers>
@@ -12,9 +12,9 @@
         <WarningLevel>4</WarningLevel>
         <Authors>Arctium</Authors>
         <Company>Arctium</Company>
-        <AssemblyVersion>9.2.5.43519</AssemblyVersion>
-        <AssemblyFileVersion>9.2.5.43519</AssemblyFileVersion>
-        <Version>9.2.5.43519</Version>
+        <AssemblyVersion>9.2.7</AssemblyVersion>
+        <AssemblyFileVersion>9.2.7</AssemblyFileVersion>
+        <Version>9.2.7</Version>
         <Product>Arctium WoW Sandbox</Product>
         <Copyright>Copyright © Arctium</Copyright>
         <AssemblyTitle>Arctium WoW Sandbox</AssemblyTitle>
@@ -107,7 +107,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <ItemGroup>

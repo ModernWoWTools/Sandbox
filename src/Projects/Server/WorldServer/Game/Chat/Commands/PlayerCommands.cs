@@ -1380,7 +1380,7 @@ namespace AuthServer.WorldServer.Game.Chat.Commands
                     Level = 1,
                     MountDisplayId = 0,
                     HoverHeight = 1,
-                    AnimState = 1716
+                    AnimState = 1726
                 };
 
                 spawn.AddToWorld();

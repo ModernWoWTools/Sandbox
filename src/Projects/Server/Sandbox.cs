@@ -75,7 +75,7 @@ namespace AuthServer
 
             //PacketLog.Initialize(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/Logs/", "Packet.txt");
 
-            Helper.PrintHeader("Sandbox for Shadowlands 9.2.5.43519");
+            Helper.PrintHeader("Sandbox for Shadowlands 9.2.7");
 
             new Thread(() =>
             {

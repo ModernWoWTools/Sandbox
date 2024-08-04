@@ -136,7 +136,7 @@ namespace AuthServer.Game.Packets.PacketHandler
             writer.WriteUInt32(0); // NpcFlags2
 
             writer.WriteUInt32(0);    // StateSpellVisualID
-            writer.WriteUInt32(1716); // StateAnimID
+            writer.WriteUInt32(1726); // StateAnimID
             writer.WriteUInt32(0);    // StateAnimKitID
             writer.WriteUInt32(0);    // StateWorldEffectIDs
             writer.WriteUInt32(0);    // StateWorldEffectsQuestObjectiveID
@@ -776,7 +776,7 @@ namespace AuthServer.Game.Packets.PacketHandler
             writer.WriteUInt32(0);
 
             writer.WriteUInt32(0);
-            writer.WriteUInt32((spawn.AnimState is 1716) ? 1716 : spawn.AnimState);
+            writer.WriteUInt32((spawn.AnimState is 1726) ? 1726 : spawn.AnimState);
             writer.WriteUInt32(0);
             writer.WriteUInt32(0); // Counter16
             writer.WriteUInt32(0);
@@ -1154,8 +1154,10 @@ namespace AuthServer.Game.Packets.PacketHandler
             writer.WriteInt32(0);
             writer.WriteUInt32(0);
             writer.WriteUInt32(0);
+            writer.WriteUInt16(0);
 
-            writer.WriteUInt8(0);
+            // ?????
+            //writer.WriteUInt8(0);
 
             // Container
             if (item2.NumSlots != 0)

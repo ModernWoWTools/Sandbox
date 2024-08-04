@@ -79,16 +79,16 @@ namespace AuthServer.Game.PacketHandler
 
             BitPack.Write(1);
             BitPack.Write(0);
-            BitPack.Write(1);
-            BitPack.Write(1);
             BitPack.Write(0);
             BitPack.Write(0);
-            BitPack.Write(1);
+            BitPack.Write(0);
+            BitPack.Write(0);
+            BitPack.Write(0);
 
             BitPack.Flush();
 
             enumCharacters.WriteInt32(WorldMgr.CharaterList.Count);
-            enumCharacters.WriteUInt32(0);
+            enumCharacters.WriteUInt32(60);
             enumCharacters.WriteInt32(WorldMgr.ChrRaces.Count);
 
             var appearanceUnlocks = new uint[]
@@ -216,6 +216,7 @@ namespace AuthServer.Game.PacketHandler
                 BitPack.Write(1);
                 BitPack.Write(1);
                 BitPack.Write(1);
+                BitPack.Write(0);
 
                 BitPack.Flush();
             }
@@ -598,7 +599,7 @@ namespace AuthServer.Game.PacketHandler
 
             PacketWriter deleteChar = new PacketWriter(ServerMessage.DeleteChar);
 
-            deleteChar.WriteUInt8(53);
+            deleteChar.WriteUInt8(58);
 
             session.Send(ref deleteChar);
         }
