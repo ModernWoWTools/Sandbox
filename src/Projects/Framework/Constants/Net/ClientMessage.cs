@@ -109,7 +109,7 @@ namespace Framework.Constants.Net
         #endregion
 
         Emote = 0x348E,
-        MapResxet = 0x3553,
+        MapReset = 0x3553,
         EquipItem = 0x399A,
         DestroyItem = 0x32A2, // 25902
         SwapItem = 0x399C,

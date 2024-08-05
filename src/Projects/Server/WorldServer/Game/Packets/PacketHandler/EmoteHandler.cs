@@ -12,7 +12,7 @@ namespace AuthServer.WorldServer.Game.Packets.PacketHandler
     {
         static uint currEmote = 0;
 
-        [Opcode2(ClientMessage.MapResxet, "18125")]
+        [Opcode2(ClientMessage.MapReset, "18125")]
         public static void HandleEmoteReset(ref PacketReader packet, WorldClass2 session)
         {
 
