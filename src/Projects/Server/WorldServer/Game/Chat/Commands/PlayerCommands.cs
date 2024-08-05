@@ -932,6 +932,33 @@ namespace AuthServer.WorldServer.Game.Chat.Commands
                     mapId = Command.Read<uint>(args, 4);
                 }
             }
+            else if(args.Length == 2 && File.Exists(Helper.DataDirectory() + "locations.txt"))
+            {
+                foreach (var line in File.ReadAllLines(Helper.DataDirectory() + "locations.txt"))
+                {
+                    var splitLine = line.Split(": ");
+                    if(splitLine.Length != 2)
+                        continue;
+
+                    var loc = Command.Read<string>(args, 1);
+                    if (splitLine[0] == loc)
+                    {
+                        var coords = splitLine[1].Split(' ');
+
+                        vector = new Vector4()
+                        {
+                            X = float.Parse(coords[0]),
+                            Y = float.Parse(coords[1]),
+                            Z = float.Parse(coords[2]),
+                            O = float.Parse(coords[3]),
+                        };
+
+                        mapId = uint.Parse(coords[4]);
+
+                        break;
+                    }
+                }
+            }
 
             if (vector != null)
             {
