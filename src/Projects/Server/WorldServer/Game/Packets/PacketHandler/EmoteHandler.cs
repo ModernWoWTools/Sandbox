@@ -15,10 +15,9 @@ namespace AuthServer.WorldServer.Game.Packets.PacketHandler
         [Opcode2(ClientMessage.MapReset, "18125")]
         public static void HandleEmoteReset(ref PacketReader packet, WorldClass2 session)
         {
-
             var session1 = Manager.WorldMgr.Sessions.First().Value;
 
-            SendEmote(0, session1, null);
+            SendEmote(26, session1, null);
         }
 
         [Opcode2(ClientMessage.Emote, "18125")]
