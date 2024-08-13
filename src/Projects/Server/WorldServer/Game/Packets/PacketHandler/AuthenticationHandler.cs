@@ -476,41 +476,41 @@ namespace AuthServer.Game.Packets.PacketHandler
 
                  var bitPack = new BitPack(featureSystemStatusGlueScreen);
 
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
-                 bitPack.Write(false);
+                 bitPack.Write(false); // Battle Pay Store Enabled
+                 bitPack.Write(false); // Battle Pay Store Available
+                 bitPack.Write(false); // Battle Pay Store Disabled By Parental Controls
+                 bitPack.Write(false); // Char Undelete System Enabled
+                 bitPack.Write(false); // Commerce System Enabled
+                 bitPack.Write(false); // Unknown
+                 bitPack.Write(false); // Will Kick From World
+                 bitPack.Write(false); // Is Expansion Preorder In Store
+                 bitPack.Write(false); // Kiosk Mode Enabled
+                 bitPack.Write(false); // Competitive Mode Enabled
+                 bitPack.Write(false); // Trial Boost Enabled
+                 bitPack.Write(false); // Token Balance Enabled
+                 bitPack.Write(false); // Live Region Character List Enabled
+                 bitPack.Write(false); // Live Region Character Copy Enabled
+                 bitPack.Write(false); // Live Region Account Copy Enabled
+                 bitPack.Write(false); // Live Region Key Bindings Copy Enabled
+                 bitPack.Write(false); // Unknown (9.0.1 checkout related)
+                 bitPack.Write(false); // Europa Ticket System Status
+                 bitPack.Write(false); // Unused 9.2.6
                  bitPack.Flush();
 
-                 featureSystemStatusGlueScreen.WriteUInt32(300);
-                 featureSystemStatusGlueScreen.WriteUInt32(30);
-                 featureSystemStatusGlueScreen.WriteUInt64(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(100); // chars
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(8);
-                 featureSystemStatusGlueScreen.WriteUInt32(8);
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt32(0);
-                 featureSystemStatusGlueScreen.WriteUInt16(0);
-                 featureSystemStatusGlueScreen.WriteUInt16(0);
+                 featureSystemStatusGlueScreen.WriteUInt32(300); // Token Poll Time Seconds
+                 featureSystemStatusGlueScreen.WriteUInt32(30);  // Kiosk Session Minutes
+                 featureSystemStatusGlueScreen.WriteUInt64(0);   // Token Balance Amount
+                 featureSystemStatusGlueScreen.WriteUInt32(100); // Max Characters Per Realm
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Live Region Character Copy Source Region Amount
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Battle Pay Store Product Delivery Delay
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Active Character Upgrade Boost Type
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Active Class Trial Boost Type
+                 featureSystemStatusGlueScreen.WriteUInt32(8);   // Minimum Expansion Level
+                 featureSystemStatusGlueScreen.WriteUInt32(8);   // Maximum Expansion Level
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Game Rule Unknown1
+                 featureSystemStatusGlueScreen.WriteUInt32(0);   // Game Rule Count
+                 featureSystemStatusGlueScreen.WriteUInt16(0);   // Max Player Name Queries Per Packet
+                 featureSystemStatusGlueScreen.WriteUInt16(0);   // Unknown
 
                 session.Send(ref featureSystemStatusGlueScreen);
             }

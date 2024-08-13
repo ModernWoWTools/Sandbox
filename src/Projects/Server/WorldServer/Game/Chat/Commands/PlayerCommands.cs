@@ -36,6 +36,7 @@ namespace AuthServer.WorldServer.Game.Chat.Commands
 #endif
         public static void Pepe(string[] args, WorldClass session)
         {
+            return; // Disabled, broken.
             var displayId = Command.Read<uint>(args, 1);
             var pChar = session.Character;
 
@@ -356,7 +357,7 @@ namespace AuthServer.WorldServer.Game.Chat.Commands
         public static void BarberShop(string[] args, WorldClass session)
         {
             var pChar = session.Character;
-            var pkt = new PacketWriter((ServerMessage)0x26BB);
+            var pkt = new PacketWriter((ServerMessage)0x26B3);
 
             pkt.WriteUInt32(0);
             session.Send(ref pkt);
