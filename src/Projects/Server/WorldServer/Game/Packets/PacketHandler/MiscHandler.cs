@@ -39,9 +39,9 @@ namespace AuthServer.Game.Packets.PacketHandler
 
             List<string> motds = new List<string>();
 
-            motds.Add("Hey!");
-            motds.Add("For support visit https://arctium.io");
-            motds.Add("INFO: worgen morph ids: 37915/37914 (use a HUMAN not a worgen)");
+            //motds.Add("Hey!");
+            //motds.Add("For support visit https://arctium.io");
+            //motds.Add("INFO: worgen morph ids: 37915/37914 (use a HUMAN not a worgen)");
             motds.Add("Have fun with the Sandbox ;)");
 
             BitPack.Write<uint>(4, 4);
