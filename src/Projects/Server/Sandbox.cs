@@ -187,7 +187,7 @@ namespace AuthServer
                 Log.Message(LogType.Info, "2. Start the wow launcher.");
                 Log.Message(LogType.Info, "3. Login with Email: arctium@arctium and password: arctium.");
                 Log.Message(LogType.Info, "Have fun!!!");
-                Log.Message(LogType.Info, "For support visit http://arctium.io");
+                //Log.Message(LogType.Info, "For support visit http://arctium.io");
             }).Start();
 
             while (true)
